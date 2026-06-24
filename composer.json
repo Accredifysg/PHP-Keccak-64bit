@@ -1,0 +1,62 @@
+{
+    "name": "accredifysg/php-keccak-64bit",
+    "description": "Fast, dependency-free Keccak (224/256/384/512) and SHAKE (128/256) for 64-bit PHP — a drop-in, ~5x faster alternative to kornrunner/keccak.",
+    "type": "library",
+    "keywords": [
+        "keccak",
+        "keccak256",
+        "sha3",
+        "shake",
+        "shake128",
+        "shake256",
+        "hash",
+        "ethereum",
+        "cryptography"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Accredify",
+            "homepage": "https://accredify.io"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "ext-openssl": "*",
+        "kornrunner/keccak": "^1.1",
+        "laravel/pint": "^1.22",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.5 || ^12.0"
+    },
+    "suggest": {
+        "ext-keccak256": "The Keccak256PHP C extension (https://github.com/Accredify/Keccak256PHP) provides a native Keccak-256 that is faster still."
+    },
+    "autoload": {
+        "psr-4": {
+            "Accredify\\Keccak\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Accredify\\Keccak\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --no-coverage",
+        "test:coverage": "XDEBUG_MODE=coverage phpunit --coverage-clover coverage/clover.xml",
+        "lint": "pint -p",
+        "stan": "phpstan analyse",
+        "check": [
+            "@lint",
+            "@stan",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
