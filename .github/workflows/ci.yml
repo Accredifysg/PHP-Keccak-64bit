@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_call:
 
 jobs:
   # Cross-version test matrix. Each row resolves its own dependency set via
