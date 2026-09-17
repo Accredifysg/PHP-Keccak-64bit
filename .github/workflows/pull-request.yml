@@ -7,18 +7,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  actionlint:
-    name: Lint GitHub Actions workflows
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7.0.1
-      - name: Download actionlint
-        id: get_actionlint
-        run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
-        shell: bash
-      - name: Check workflow files
-        run: ${{ steps.get_actionlint.outputs.executable }} -color
-        shell: bash
+  lint-actions:
+    name: Lint GitHub Actions Workflows
+    uses: ./.github/workflows/lint-actions.yml
 
   ci:
     name: Continuous Integration
