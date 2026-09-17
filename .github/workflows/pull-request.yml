@@ -7,6 +7,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  lint-actions:
+    name: Lint GitHub Actions Workflows
+    uses: ./.github/workflows/lint-actions.yml
+
   ci:
     name: Continuous Integration
     uses: ./.github/workflows/ci.yml

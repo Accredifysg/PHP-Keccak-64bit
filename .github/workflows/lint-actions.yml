@@ -1,7 +1,7 @@
 name: Lint GitHub Actions Workflows
 
 on:
-  pull_request:
+  workflow_call:
 
 # Default configs live here (not in a committed file) because actionlint/zizmor
 # auto-discover config from the *repo being scanned* — a file committed here
